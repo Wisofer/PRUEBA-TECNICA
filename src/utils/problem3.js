@@ -114,7 +114,7 @@ export class VasijaSolver {
 
       if (estado.isVasijaALlena()) {
         performanceMetrics.tiempoEjecucion = performance.now() - startTime;
-        performanceMetrics.memoriaUtilizada = Math.round((performance.memory?.usedJSHeapSize / 1024 / 1024) || 0);
+        performanceMetrics.memoriaUtilizada = 'N/A (Browser environment)';
         
         return {
           exito: true,
