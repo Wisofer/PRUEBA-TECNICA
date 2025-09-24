@@ -12,12 +12,16 @@ const TutorialButtons = () => {
     } else {
       setIsOpen(false);
       localStorage.setItem('tutorial-completed', 'true');
+      // Disparar evento personalizado para notificar que el tutorial se completó
+      window.dispatchEvent(new CustomEvent('tutorial-completed'));
     }
   };
 
   const skipTutorial = () => {
     setIsOpen(false);
     localStorage.setItem('tutorial-completed', 'true');
+    // Disparar evento personalizado para notificar que el tutorial se completó
+    window.dispatchEvent(new CustomEvent('tutorial-completed'));
   };
 
   const isLastStep = currentStep === steps.length - 1;
@@ -44,6 +48,34 @@ const TutorialContent = () => {
     if (!tutorialCompleted) {
       setIsVisible(true);
     }
+  }, []);
+
+  // Escuchar cambios en el estado del tutorial
+  useEffect(() => {
+    const handleTutorialComplete = () => {
+      setIsVisible(false);
+    };
+
+    // Verificar si el tutorial se completó
+    const tutorialCompleted = localStorage.getItem('tutorial-completed');
+    if (tutorialCompleted) {
+      setIsVisible(false);
+    }
+
+    // Escuchar evento personalizado de tutorial completado
+    window.addEventListener('tutorial-completed', handleTutorialComplete);
+
+    // Escuchar cambios en localStorage (para cambios entre pestañas)
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'tutorial-completed' && e.newValue === 'true') {
+        setIsVisible(false);
+      }
+    });
+
+    return () => {
+      window.removeEventListener('tutorial-completed', handleTutorialComplete);
+      window.removeEventListener('storage', handleTutorialComplete);
+    };
   }, []);
 
   const startTutorial = () => {

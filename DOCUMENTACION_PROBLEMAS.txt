@@ -2,7 +2,7 @@
                     DOCUMENTACIÓN TÉCNICA - PRUEBA TÉCNICA
 ================================================================================
 
-FECHA: 2024
+FECHA: 2025
 AUTOR: Sistema de Evaluación Técnica
 VERSIÓN: 1.0
 
