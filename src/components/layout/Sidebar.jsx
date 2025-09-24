@@ -13,9 +13,11 @@ import {
   Star
 } from 'lucide-react';
 import { PROBLEMS } from '../../utils/constants';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
   const location = useLocation();
+  const { isDark } = useTheme();
 
   const iconMap = {
     Home,
@@ -63,24 +65,47 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
       `}>
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
-          {!isCollapsed && (
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <Star className="w-5 h-5 text-white" />
+          {!isCollapsed ? (
+            <>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                  <Star className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h1 className="font-bold text-gray-800 dark:text-gray-200">Prueba Técnica</h1>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">William Dashboard</p>
+                </div>
               </div>
-              <div>
-                <h1 className="font-bold text-gray-800 dark:text-gray-200">Prueba Técnica</h1>
-                <p className="text-xs text-gray-500 dark:text-gray-400">William Dashboard</p>
-              </div>
+              
+              {/* Botón de colapsar cuando está expandido */}
+              <button
+                onClick={() => setIsCollapsed(!isCollapsed)}
+                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200 hover:scale-105 group"
+                title="Colapsar sidebar"
+              >
+                <div className="relative">
+                  <ChevronRight className="w-5 h-5 text-gray-600 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
+                  {/* Indicador de estado */}
+                  <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-blue-400 transition-all duration-200"></div>
+                </div>
+              </button>
+            </>
+          ) : (
+            /* Cuando está colapsado - solo el botón de menú centrado */
+            <div className="flex justify-center w-full">
+              <button
+                onClick={() => setIsCollapsed(!isCollapsed)}
+                className="p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200 hover:scale-105 group"
+                title="Expandir sidebar"
+              >
+                <div className="relative">
+                  <Menu className="w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
+                  {/* Indicador de estado */}
+                  <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-green-400 transition-all duration-200"></div>
+                </div>
+              </button>
             </div>
           )}
-          
-          <button
-            onClick={() => setIsCollapsed(!isCollapsed)}
-            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors lg:hidden"
-          >
-            {isCollapsed ? <Menu className="w-5 h-5 text-gray-600 dark:text-gray-300" /> : <X className="w-5 h-5 text-gray-600 dark:text-gray-300" />}
-          </button>
         </div>
 
         {/* Navigation */}
@@ -145,13 +170,6 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
           </div>
         )}
 
-        {/* Collapse button for desktop */}
-        <button
-          onClick={() => setIsCollapsed(!isCollapsed)}
-          className="hidden lg:block absolute -right-3 top-20 w-6 h-6 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-full shadow-md hover:shadow-lg transition-all duration-200"
-        >
-          <ChevronRight className={`w-4 h-4 text-gray-600 dark:text-gray-300 transition-transform duration-200 ${isCollapsed ? '' : 'rotate-180'}`} />
-        </button>
       </div>
     </>
   );

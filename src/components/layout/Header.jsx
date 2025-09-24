@@ -10,18 +10,11 @@ import {
   AlertCircle
 } from 'lucide-react';
 import { PROBLEMS } from '../../utils/constants';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const Header = ({ isCollapsed, setIsCollapsed }) => {
   const location = useLocation();
-  const [isDark, setIsDark] = React.useState(() => {
-    // Verificar si hay un tema guardado en localStorage
-    const saved = localStorage.getItem('theme');
-    if (saved) {
-      return saved === 'dark';
-    }
-    // Por defecto, tema claro
-    return false;
-  });
+  const { isDark, toggleTheme } = useTheme();
 
   // Encontrar el problema actual
   const currentProblem = PROBLEMS.find(p => p.path === location.pathname);
@@ -41,51 +34,12 @@ const Header = ({ isCollapsed, setIsCollapsed }) => {
 
   const [currentTime, setCurrentTime] = React.useState(getCurrentTime());
 
-  // Aplicar tema al cargar y cuando cambie
-  React.useEffect(() => {
-    const root = document.documentElement;
-    
-    console.log('Applying theme, isDark:', isDark);
-    
-    // Aplicar tema al HTML
-    if (isDark) {
-      root.classList.add('dark');
-      console.log('Added dark class to HTML');
-    } else {
-      root.classList.remove('dark');
-      console.log('Removed dark class from HTML');
-    }
-    
-    // Guardar en localStorage
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    console.log('Saved theme to localStorage:', isDark ? 'dark' : 'light');
-  }, [isDark]);
-
-  // Aplicar tema inicial al cargar la página
-  React.useEffect(() => {
-    const saved = localStorage.getItem('theme');
-    const root = document.documentElement;
-    
-    if (saved === 'dark') {
-      root.classList.add('dark');
-      console.log('Initial theme applied: dark');
-    } else {
-      root.classList.remove('dark');
-      console.log('Initial theme applied: light');
-    }
-  }, []);
-
   React.useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(getCurrentTime());
     }, 1000);
     return () => clearInterval(timer);
   }, []);
-
-  const toggleTheme = () => {
-    console.log('Toggle theme clicked, current isDark:', isDark);
-    setIsDark(!isDark);
-  };
 
   return (
     <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm">
