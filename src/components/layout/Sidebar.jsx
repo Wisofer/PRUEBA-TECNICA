@@ -68,8 +68,13 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
           {!isCollapsed ? (
             <>
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                  <Star className="w-5 h-5 text-white" />
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center overflow-hidden">
+                  <img 
+                    src="/src/assets/gifs/BDG.gif" 
+                    alt="BDG" 
+                    className="w-full h-full object-cover rounded-lg"
+                    title="BDG - Empresa de Desarrollo"
+                  />
                 </div>
                 <div>
                   <h1 className="font-bold text-gray-800 dark:text-gray-200">Prueba Técnica</h1>
@@ -91,7 +96,6 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
               </button>
             </>
           ) : (
-            /* Cuando está colapsado - solo el botón de menú centrado */
             <div className="flex justify-center w-full">
               <button
                 onClick={() => setIsCollapsed(!isCollapsed)}
@@ -106,7 +110,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
               </button>
             </div>
           )}
-        </div>
+        </div>  
 
         {/* Navigation */}
         <nav className="flex-1 p-4 space-y-2" data-tour="sidebar">

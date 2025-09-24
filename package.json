@@ -15,7 +15,7 @@
     "@types/d3": "^7.4.3",
     "@types/three": "^0.180.0",
     "d3": "^7.9.0",
-    "framer-motion": "^12.23.19",
+    "framer-motion": "^12.23.21",
     "gsap": "^3.13.0",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.544.0",
