@@ -18,6 +18,7 @@ import Button from '../components/ui/Button';
 import Badge from '../components/ui/Badge';
 import { PROBLEMS, DIFFICULTY_COLORS } from '../utils/constants';
 
+
 const Dashboard = () => {
   const iconMap = {
     Calculator,
