@@ -97,7 +97,7 @@ export function sumPrimeDivisors(num) {
   const endTime = performance.now();
   auditLog.performance = {
     executionTime: `${(endTime - startTime).toFixed(3)}ms`,
-    memoryUsage: `${Math.round(process.memoryUsage?.().heapUsed / 1024 / 1024) || 'N/A'}MB`,
+    memoryUsage: 'N/A (Browser environment)',
     operationsCount: properDivisors.length + primeDivisors.length + 1
   };
 
