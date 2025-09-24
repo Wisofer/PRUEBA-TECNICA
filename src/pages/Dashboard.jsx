@@ -56,14 +56,14 @@ const Dashboard = () => {
     },
     {
       title: 'Puntuación Actual',
-      value: '320/500 pts',
+      value: '490/500 pts',
       icon: Award,
       color: 'text-green-600',
       bgColor: 'bg-green-50'
     },
     {
       title: 'Progreso General',
-      value: '80%',
+      value: '98%',
       icon: TrendingUp,
       color: 'text-purple-600',
       bgColor: 'bg-purple-50'
