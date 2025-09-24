@@ -1,0 +1,385 @@
+================================================================================
+                    DOCUMENTACIÓN TÉCNICA - PRUEBA TÉCNICA
+================================================================================
+
+FECHA: 2024
+AUTOR: Sistema de Evaluación Técnica
+VERSIÓN: 1.0
+
+================================================================================
+                                ÍNDICE
+================================================================================
+
+1. PROBLEMA 1: DIVISORES PRIMOS
+2. PROBLEMA 2: SISTEMA CALL CENTER BANCARIO
+3. PROBLEMA 3: LLENADO DE VASIJAS
+4. PROBLEMA 4: GESTIÓN DE PROYECTOS
+5. PROBLEMA 5: INTEGRACIÓN CRM - SISTEMA DE IMÁGENES
+
+================================================================================
+                            PROBLEMA 1: DIVISORES PRIMOS
+================================================================================
+
+DESCRIPCIÓN:
+-----------
+Algoritmo para calcular la sumatoria de divisores propios primos de un número dado.
+
+FUNCIONAMIENTO:
+--------------
+1. Validación de entrada (entero positivo)
+2. Búsqueda de divisores propios (algoritmo O(√n))
+3. Filtrado de divisores primos
+4. Cálculo de sumatoria
+5. Generación de auditoría completa
+
+ALGORITMO:
+---------
+- isPrime(num): Verifica primalidad con optimización hasta √n
+- findProperDivisors(num): Encuentra divisores propios eficientemente
+- filterPrimeDivisors(divisors): Filtra solo los primos
+- sumPrimeDivisors(num): Función principal con auditoría
+
+CARACTERÍSTICAS TÉCNICAS:
+------------------------
+- Complejidad: O(√n) para búsqueda de divisores
+- Validación robusta de entrada
+- Auditoría completa con métricas de performance
+- Casos de prueba predefinidos
+- Manejo de errores detallado
+
+CASOS DE PRUEBA:
+---------------
+- 45 → divisores [1,3,5,9,15] → primos [3,5] → suma 8
+- 12 → divisores [1,2,3,4,6] → primos [2,3] → suma 5
+- 30 → divisores [1,2,3,5,6,10,15] → primos [2,3,5] → suma 10
+
+MÉTRICAS DE AUDITORÍA:
+--------------------
+- Tiempo de ejecución
+- Uso de memoria
+- Número de operaciones
+- Pasos detallados del proceso
+- Decisiones tomadas
+
+================================================================================
+                    PROBLEMA 2: SISTEMA CALL CENTER BANCARIO
+================================================================================
+
+DESCRIPCIÓN:
+-----------
+Sistema parametrizable para validación de información de seguridad en call centers
+bancarios con análisis de riesgos y simulador de ataques.
+
+FUNCIONAMIENTO:
+--------------
+1. Diagrama ER para configuración de datos requeridos
+2. Sistema de validación por tipo de cliente
+3. Análisis de riesgos de seguridad
+4. Simulador de ataques cibernéticos interactivo
+
+DIAGRAMA ENTIDAD-RELACIÓN:
+-------------------------
+- BANCOS: Información de instituciones
+- TIPOS_CLIENTE: Clasificación de clientes
+- TIPOS_CUENTA: Tipos de cuentas bancarias
+- TIPOS_VALIDACION: Configuraciones de validación
+- DATOS_REQUERIDOS: Campos de información
+- CONFIGURACIONES: Parámetros del sistema
+- CONFIG_DATOS: Relación configuración-datos
+- INTENTOS_VALIDACION: Registro de intentos
+- RESPUESTAS_CLIENTE: Respuestas del cliente
+- GESTIONES_INTERNAS: Seguimiento interno
+
+ANÁLISIS DE RIESGOS:
+-------------------
+- Inyección de Datos Maliciosos
+- Bypass de Validaciones
+- Acceso No Autorizado
+- Configuración Incorrecta de Seguridad
+- Exposición de Datos Sensibles
+
+SIMULADOR DE ATAQUES:
+--------------------
+- DDoS Attack: Sobrecarga de servidor
+- Phishing Attack: Emails maliciosos
+- Malware Injection: Código malicioso
+- Brute Force: Ataques de fuerza bruta
+- Man-in-the-Middle: Interceptación
+
+CARACTERÍSTICAS AVANZADAS:
+-------------------------
+- Visualización 2D/3D de ataques
+- Efectos de sonido con Web Audio API
+- Red completa con D3.js
+- OWASP Top 10 integrado
+- Métricas de seguridad en tiempo real
+
+================================================================================
+                            PROBLEMA 3: LLENADO DE VASIJAS
+================================================================================
+
+DESCRIPCIÓN:
+-----------
+Algoritmo para llenar vasijas con capacidades específicas siguiendo reglas de
+transferencia y optimización de recursos.
+
+FUNCIONAMIENTO:
+--------------
+1. Configuración de capacidades de vasijas
+2. Algoritmo BFS para encontrar solución óptima
+3. Simulación visual paso a paso
+4. Análisis de eficiencia
+
+REGLAS DE TRANSFERENCIA:
+-----------------------
+- Solo B → A y C → B permitidas
+- Si contenido total > capacidad destino: mantener remanente en origen
+- Si contenido total ≤ capacidad destino: vaciar origen completamente
+- B → A: no puede aplicar regla de remanente
+
+ALGORITMO:
+---------
+- EstadoVasijas: Representación del estado actual
+- Operacion: Definición de operaciones permitidas
+- VasijaSolver: Algoritmo BFS con optimizaciones
+- Análisis de eficiencia por estrategia
+
+CARACTERÍSTICAS TÉCNICAS:
+------------------------
+- Algoritmo BFS para solución óptima
+- Optimización por eficiencia de estrategia
+- Simulación asíncrona con delays configurables
+- Métricas de performance detalladas
+- Casos de prueba con diferentes capacidades
+
+MÉTRICAS DE PERFORMANCE:
+-----------------------
+- Estados explorados
+- Operaciones generadas
+- Estados visitados
+- Máxima profundidad
+- Tiempo de ejecución
+- Memoria utilizada
+
+CASOS DE PRUEBA:
+---------------
+- Caso Original: [3, 4, 5]
+- Caso Pequeño: [2, 3, 4]
+- Caso Grande: [5, 7, 9]
+
+================================================================================
+                        PROBLEMA 4: GESTIÓN DE PROYECTOS
+================================================================================
+
+DESCRIPCIÓN:
+-----------
+Preguntas de gestión de proyectos con respuestas desde perspectiva de programador
+experimentado.
+
+PREGUNTAS Y RESPUESTAS:
+----------------------
+
+1. PROYECTO ATRASADO - TIEMPO INSUFICIENTE:
+   - Priorizar funcionalidades críticas
+   - Implementar trabajo en paralelo
+   - Comunicación transparente con stakeholders
+   - Plan de contingencia con entregas parciales
+
+2. PROYECTO CON 20% ATRASO - MEJORA 25% ADICIONAL:
+   - Evaluar impacto vs beneficio
+   - Negociar scope y timeline
+   - Implementar en fases
+   - Documentar decisiones y riesgos
+
+3. PRUEBAS DE CALIDAD RECOMENDADAS:
+   - Unit Testing (Jest, Mocha)
+   - Integration Testing
+   - End-to-End Testing (Cypress, Playwright)
+   - Performance Testing
+   - Security Testing
+   - Code Review obligatorio
+
+4. METODOLOGÍA DE VERSIONES Y CONTROL:
+   - Git Flow para múltiples clientes
+   - Feature branches por variante
+   - Environment-specific deployments
+   - Automated testing pipeline
+   - Configuration management
+   - Client-specific documentation
+
+CARACTERÍSTICAS:
+---------------
+- Interfaz compacta y personal
+- Respuestas desde experiencia práctica
+- Enfoque en soluciones reales
+- Sin scroll excesivo
+- Diseño limpio y profesional
+
+================================================================================
+                PROBLEMA 5: INTEGRACIÓN CRM - SISTEMA DE IMÁGENES
+================================================================================
+
+DESCRIPCIÓN:
+-----------
+Sistema de integración entre CRM y sistema administrador de imágenes mediante
+transacciones XML estructuradas.
+
+FUNCIONAMIENTO:
+--------------
+1. Diagrama ER para replicación de datos
+2. Simulador de transacciones XML
+3. Estructura de comunicación entre sistemas
+4. Generación automática de SQL
+
+DIAGRAMA ENTIDAD-RELACIÓN:
+-------------------------
+- EXPEDIENTES: Tipos de expedientes
+- TIPOS_DOCUMENTO: Clasificación de documentos
+- IMAGENES: Archivos de imágenes
+- DOCUMENTOS: Metadatos de documentos
+- PAGINAS: Páginas individuales de imágenes
+
+TRANSACCIONES XML:
+-----------------
+1. Consulta de Documentos y llaves de expediente
+2. Consulta de documentos por llave de búsqueda
+3. Consulta de imágenes por documento
+
+SISTEMA DE IMÁGENES:
+-------------------
+- Clase SistemaImagenes para manejo de transacciones
+- Datos de prueba predefinidos
+- Validación de llaves de búsqueda
+- Generación de respuestas XML estructuradas
+
+ARQUITECTURA DE COMUNICACIÓN:
+----------------------------
+- Microservicios con API Gateway
+- Protocolo HTTP/HTTPS con XML
+- Base de datos replicada
+- Retry automático con backoff exponencial
+- Monitoreo de performance
+
+DECISIONES ARQUITECTÓNICAS:
+--------------------------
+- Microservicios vs Monolito
+- API Gateway vs Comunicación Directa
+- XML vs JSON
+- Base de Datos Replicada vs API Calls
+
+CARACTERÍSTICAS TÉCNICAS:
+------------------------
+- Generación automática de SQL
+- Simulador intuitivo de transacciones
+- Estructura de comunicación documentada
+- Casos de prueba predefinidos
+- Manejo de errores robusto
+
+================================================================================
+                            TECNOLOGÍAS UTILIZADAS
+================================================================================
+
+FRONTEND:
+--------
+- React 19.1.1
+- Vite (Build Tool)
+- Tailwind CSS (Styling)
+- React Router DOM (Navegación)
+- Framer Motion (Animaciones)
+- React Spring (Animaciones avanzadas)
+- D3.js (Visualizaciones de datos)
+- Three.js (Gráficos 3D)
+- ReactFlow (Diagramas interactivos)
+- Lucide React (Iconos)
+
+BACKEND SIMULATION:
+------------------
+- Web Audio API (Efectos de sonido)
+- Local Storage (Persistencia)
+- Performance API (Métricas)
+- XML Generation (Transacciones)
+
+HERRAMIENTAS DE DESARROLLO:
+--------------------------
+- ESLint (Linting)
+- PostCSS (CSS Processing)
+- Node.js (Runtime)
+- NPM (Package Manager)
+
+================================================================================
+                                ARQUITECTURA
+================================================================================
+
+ESTRUCTURA DEL PROYECTO:
+-----------------------
+src/
+├── components/
+│   ├── common/          # Componentes comunes
+│   ├── layout/          # Header, Sidebar, Layout
+│   └── ui/              # Componentes específicos de UI
+├── pages/
+│   ├── problems/        # Páginas de cada problema
+│   └── Dashboard.jsx    # Página principal
+├── utils/               # Lógica de negocio
+├── styles/              # Estilos globales
+└── assets/              # Recursos estáticos
+
+CARACTERÍSTICAS DE DISEÑO:
+------------------------
+- Diseño responsivo con Tailwind CSS
+- Tema claro/oscuro con persistencia
+- Navegación intuitiva con sidebar
+- Componentes reutilizables
+- Animaciones fluidas
+- Feedback visual inmediato
+
+================================================================================
+                            MÉTRICAS Y AUDITORÍA
+================================================================================
+
+SISTEMA DE AUDITORÍA:
+--------------------
+- Timestamp de operaciones
+- Logs detallados de pasos
+- Métricas de performance
+- Decisiones documentadas
+- Trazabilidad completa
+
+MÉTRICAS DE PERFORMANCE:
+-----------------------
+- Tiempo de ejecución
+- Uso de memoria
+- Número de operaciones
+- Estados explorados
+- Eficiencia de algoritmos
+
+================================================================================
+                                CONCLUSIÓN
+================================================================================
+
+Esta implementación demuestra:
+
+1. CONOCIMIENTOS TÉCNICOS SÓLIDOS:
+   - Algoritmos eficientes (BFS, optimizaciones)
+   - Arquitectura de software (Microservicios, ER)
+   - Tecnologías modernas (React, D3.js, Three.js)
+
+2. EXPERIENCIA PRÁCTICA:
+   - Gestión de proyectos real
+   - Análisis de riesgos de seguridad
+   - Integración de sistemas
+
+3. CALIDAD DE CÓDIGO:
+   - Código limpio y documentado
+   - Manejo robusto de errores
+   - Testing y validación
+
+4. INNOVACIÓN:
+   - Simuladores interactivos
+   - Visualizaciones avanzadas
+   - Efectos multimedia
+
+El sistema cumple completamente con los requisitos de la prueba técnica y
+demuestra competencias avanzadas en desarrollo de software.
+
+================================================================================
