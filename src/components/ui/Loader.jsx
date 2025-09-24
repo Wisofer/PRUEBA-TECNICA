@@ -132,7 +132,7 @@ const Loader = () => {
                 transition={{ duration: 0.3 }}
               >
                 <img 
-                  src="/src/assets/gifs/BDG.gif" 
+                  src="/BDG.gif" 
                   alt="BDG - Empresa de Desarrollo" 
                   className="h-48 w-auto mx-auto drop-shadow-2xl sm:h-56 md:h-64 lg:h-72 xl:h-80"
                   title="BDG - Empresa de Desarrollo de Software"

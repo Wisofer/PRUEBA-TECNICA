@@ -70,7 +70,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center overflow-hidden">
                   <img 
-                    src="/src/assets/gifs/BDG.gif" 
+                    src="/BDG.gif" 
                     alt="BDG" 
                     className="w-full h-full object-cover rounded-lg"
                     title="BDG - Empresa de Desarrollo"
