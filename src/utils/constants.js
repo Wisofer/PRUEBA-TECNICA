@@ -38,7 +38,7 @@ export const PROBLEMS = [
     color: "bg-gradient-to-br from-orange-500 to-orange-700",
     path: "/problema-4",
     difficulty: "Bajo",
-    status: "pending"
+    status: "completed"
   },
   {
     id: 5,
