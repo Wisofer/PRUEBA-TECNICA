@@ -36,7 +36,12 @@ const Problem3 = () => {
   const [activeTab, setActiveTab] = useState('simulator');
   const [casosPruebaResultados, setCasosPruebaResultados] = useState(null);
 
-  const solver = new VasijaSolver(capacidades);
+  const [solver, setSolver] = useState(new VasijaSolver(capacidades));
+
+  // Actualizar solver cuando cambien las capacidades
+  useEffect(() => {
+    setSolver(new VasijaSolver(capacidades));
+  }, [capacidades]);
 
   const resolverProblema = () => {
     const resultado = solver.resolver();
